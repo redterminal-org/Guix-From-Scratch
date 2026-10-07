@@ -28,6 +28,13 @@
     (file-name "zig-translate-c.tar.gz")
     (sha256 (base32 "57ob53aclu2mstxybt6hhe3ptit2hsnz2vg56pofpaadaxqxeevq"))))
 
+(define zigini-source
+  (origin
+    (method url-fetch)
+    (uri "https://github.com/AshAmetrine/zigini/archive/a665d081dda42664a96da2840ea09c5ccf9d0692.tar.gz")
+    (file-name "zig-ini-0.5.0.tar.gz")
+    (sha256 (base32 "14n0nz3wqsws14301wadiw2agfn2cg0lyhi72wqip15rr4dhfzp8"))))
+
 (define-public ly
   (package
     (name "ly")
@@ -49,7 +56,8 @@
       #:zig-inputs
       (list (cons "clap" clap-source)
             (cons "termbox2" termbox2-source)
-            (cons "translate_c" translate-c-source))))
+            (cons "translate_c" translate-c-source)
+            (cons "zigini" zigini-source))))
     (home-page "https://codeberg.org/fairyglade/ly")
     (synopsis "Lightweight TUI display manager")
     (description

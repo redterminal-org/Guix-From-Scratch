@@ -1,6 +1,9 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Make the Ly build fully reproducible
+* Add the missing zigini 0.5.0 dependency at the upstream commit required by Ly 1.4.1.
+* Pin all Ly Zig dependencies in the Guix package.
 ### Remove temporary private-data downloads after import
 * Always remove the temporary ~/.cache/guix-private-data tree after private-data processing, including failed downloads and import errors.
 ### Add and activate a Ly display manager service
