@@ -1,6 +1,9 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Unify GTK and Qt theming with Tokyo Night
+* Add GTK 3/4 themes and Qt 5/6 color schemes based on the existing Waybar Tokyo Night palette.
+* Install qt5ct, qt6ct, and Kvantum system-wide and enable qt5ct as the shared Qt platform theme for the desktop session.
 ### Separate user Home environments and private-data handling
 * Move neovim to the system-wide package profile and give each user an independent Home package list, initially empty for daniel and root.
 * Share the Home dotfiles and Rogallo setup while enabling private-data import for daniel and future non-root users and disabling it for root.

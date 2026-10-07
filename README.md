@@ -41,6 +41,12 @@ During every Home activation, `dotfiles/home/` is copied recursively to `~/` and
 
 `~/.config/nvim/` is intentionally absent: manage it with your separate local-network LazyVim Git repository.
 
+## Themes
+
+GTK 3 and GTK 4 use the shared Tokyo Night theme under `~/.themes/Tokyo-Night/`. Qt 5 and Qt 6 use matching Fusion palettes through qt5ct and qt6ct. The theme colors are derived from the existing Waybar palette.
+
+The session exports `QT_QPA_PLATFORMTHEME=qt5ct`. This is the qt5ct/qt6ct-compatible setup used for mixed Qt 5/6 environments. Kvantum is installed as an optional Qt style engine, but the default theme deliberately uses Fusion so both Qt generations use the same palette without depending on a Qt-5 Kvantum build.
+
 ## Secrets
 
 No secrets belong in this repository. The Home service imports GPG, SSH, password-store and Rogallo data to mutable user directories and writes a one-time marker at `~/.local/state/.guix-private-data-import-marker`. This service is enabled for `daniel` and future non-root users, but deliberately disabled for `root`.

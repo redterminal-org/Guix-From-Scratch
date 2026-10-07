@@ -22,7 +22,8 @@
      "kitty" "yazi" "qutebrowser" "librewolf" "freetube" "neomutt"
      "urlscan" "elinks" "mpv" "zathura" "pipx" "ansible" "python" "pyright"
      "abook" "zbar" "tmux" "rofimoji" "openssh" "netcat" "coreutils"
-     "gcc" "gitui" "nodejs" "par")))
+     "gcc" "gitui" "nodejs" "par"
+     "qt5ct" "qt6ct" "kvantum")))
 
 (define base-operating-system
   (operating-system
