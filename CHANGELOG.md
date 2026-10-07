@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Add gemget to daniel's Home profile
+* Package gemget 1.9.0 from its upstream source and make it available only to daniel.
 ### Add todo.txt-cli to user Home profiles
 * Package todo.txt-cli 2.14.0 from its upstream release and make it available to both daniel and root.
 ### Add McFly to user Home profiles
