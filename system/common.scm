@@ -13,7 +13,7 @@
 
 (define system-packages
   (specifications->packages
-   '("curl" "wget" "git" "bat" "eza" "fd" "fzf" "htop" "acpi" "ripgrep"
+   '("curl" "wget" "git" "neovim" "bat" "eza" "fd" "fzf" "htop" "acpi" "ripgrep"
      "lsof" "tree" "tree-sitter-cli" "inetutils" "brightnessctl" "jq" "pv" "sshfs"
      "gdu" "wev" "gnupg" "starship" "zfs"
      "wofi" "waybar" "hyprland" "hyprpaper" "xwayland" "dolphin"
