@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Remove obsolete abook command references
+* Remove the obsolete mutt, lpr, and lynx command references from the abook configuration.
 ### Prevent failed GPG imports from marking private data as successful
 * Check GPG import exit codes before copying private data and creating the success marker.
 ### Clean up Bash history and remove obsolete ranger alias

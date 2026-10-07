@@ -17,18 +17,8 @@ set show_all_emails=true
 # Format of an entry's line in the main abook screen
 set index_format=" {name:25} {email:40} {notes}"
 
-# Command used to start mutt
-#set mutt_command="mutt || neomutt || exit 1"
-set mutt_command=mutt
-
 # Return all email addresses to a mutt query
 set mutt_return_all_emails=true
-
-# Command used to print
-set print_command=lpr
-
-# Command used to start the web browser
-set www_command=lynx
 
 # address style [eu|us|uk]
 set address_style=eu
