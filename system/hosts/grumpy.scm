@@ -1,5 +1,6 @@
 (define-module (system hosts grumpy)
   #:use-module (gnu)
+  #:use-module (gnu services networking)
   #:use-module (nongnu packages linux)
   #:use-module (nongnu system linux-initrd)
   #:use-module (system common))
@@ -31,4 +32,9 @@
    (bootloader-configuration
     (bootloader grub-efi-bootloader)
     (targets (list "/boot/efi"))
-    (keyboard-layout keyboard-layout))))
+    (keyboard-layout keyboard-layout)))
+  (services
+   (cons*
+    (service network-manager-service-type)
+    (service wpa-supplicant-service-type)
+    (operating-system-user-services base-operating-system))))

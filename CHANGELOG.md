@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Updated ./system/hosts/grumpy.scm
+* Integrated NetworkManager and wpa-supplicant
 ### Remove unsupported persistent-workspaces option from ext/workspaces
 * Remove the unsupported persistent-workspaces configuration from the Waybar ext/workspaces module.
 ### Update README for current configuration
