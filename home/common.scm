@@ -1,7 +1,6 @@
 (define-module (home common)
   #:use-module (gnu home)
   #:use-module (gnu home services)
-  #:use-module (gnu packages)
   #:use-module (guix gexp)
   #:use-module (home services dotfiles)
   #:use-module (home services private-data)
@@ -9,8 +8,7 @@
 
 (define* (make-home-environment #:key (packages '()) (private-data? #t))
   (home-environment
-    (packages
-     (specifications->packages packages))
+    (packages packages)
     (services
      (append
       (list

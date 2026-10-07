@@ -1,6 +1,9 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Add McFly to user Home profiles
+* Package McFly 0.9.4 locally from its upstream Linux x86_64 release and make it available to both daniel and root.
+* Allow shared Home environment construction to accept local package objects alongside user-specific package selections.
 ### Deploy Home environments through system reconfigure
 * Register daniel's and root's existing Home environments with guix-home-service-type so a system reconfigure builds and activates both Home environments.
 ### Unify GTK and Qt theming with Tokyo Night
