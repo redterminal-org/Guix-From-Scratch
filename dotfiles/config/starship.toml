@@ -1,0 +1,141 @@
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$status\
+$container\
+$shell\
+$character"""
+
+# right_format = "$time"
+
+# should I insert a newline between shell prompts?
+add_newline = true
+
+# Replace '>' symbol prompt
+[character]		# Name of the module we are configuring
+success_symbol = "[>](bold green)"		# The "success_symbol" segment
+error_symbol = "[>](bold green)"				# The "error_symbol" segment
+vimcmd_symbol = "[<](bold green)"
+vimcmd_replace_one_symbol = "[<](bold purple)"
+vimcmd_replace_symbol = "[<](bold purple)"
+vimcmd_visual_symbol= "[<](bold yellow)"
+
+# Disable the package module, hiding it from the prompt completely
+[line_break]
+disabled = false
+
+[username]
+disabled = false
+
+[time]
+format = '[\[$time\] ]($style)'
+style = '#FF8000'
+disabled = false
+
+[cmd_duration]
+format = '[\($duration\)]($style) '
+
+[status]
+disabled = false
+format = '[\($symbol$status\)]($style)'
+
+[hostname]
+format = '[\[$ssh_symbol$hostname\] ]($style)'
+ssh_only = false
+disabled = false
+
+[directory]
+format = '[\[$path\]](fg:#6060E0) '
+disabled = false
+
+[git_branch]
+style = 'fg:#FF0080'
+#format = '[$git_branch](fg:#800080)'
+#disabled = false
+#
+[git_commit]
+style = 'fg:#800080'
+format = '[\($tag\) ](fg:#FF8000)'
+only_detached = false
+tag_disabled = false
+tag_max_candidates = 8
+tag_symbol = ' 🔖  '
+#disabled = false
+#
+#[git_state]
+#format = '[$git_state](fg:#800080)'
+#disabled = false
+#
+#[git_metrics]
+#format = '[$git_metrics](fg:#800080)'
+#disabled = false
+#
+#[git_status]
+#format = '[$git_status](red)'
+#disabled = false

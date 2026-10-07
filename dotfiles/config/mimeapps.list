@@ -1,0 +1,37 @@
+[Added Associations]
+
+[Default Applications]
+application/gzip=dolphin.desktop
+application/json=qutebrowser-xdg.desktop
+application/pdf=org.pwmt.zathura.desktop
+application/x-7z-compressed=dolphin.desktop
+application/x-bzip2=dolphin.desktop
+application/x-rar=dolphin.desktop
+application/x-tar=dolphin.desktop
+application/x-xz=dolphin.desktop
+application/xhtml+xml=qutebrowser-xdg.desktop
+application/xml=qutebrowser-xdg.desktop
+application/zip=dolphin.desktop
+audio/flac=mpv.desktop
+audio/mpeg=mpv.desktop
+audio/ogg=mpv.desktop
+audio/wav=mpv.desktop
+audio/x-wav=mpv.desktop
+image/gif=qutebrowser-xdg.desktop
+image/jpeg=qutebrowser-xdg.desktop
+image/png=qutebrowser-xdg.desktop
+image/svg+xml=qutebrowser-xdg.desktop
+image/webp=qutebrowser-xdg.desktop
+inode/directory=org.kde.dolphin.desktop
+text/html=qutebrowser-xdg.desktop
+text/plain=qutebrowser-xdg.desktop
+text/xml=qutebrowser-xdg.desktop
+video/mp4=mpv.desktop
+video/mpeg=mpv.desktop
+video/ogg=mpv.desktop
+video/webm=mpv.desktop
+video/x-matroska=mpv.desktop
+x-scheme-handler/http=qutebrowser-xdg.desktop
+x-scheme-handler/https=qutebrowser-xdg.desktop
+
+[Removed Associations]

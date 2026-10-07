@@ -1,0 +1,8 @@
+# MACRO '\Ck': Press <CTRL>+k to update all keys of addressbook contacts
+macro index,pager \Ck "!abook --mutt-query '' | ~/.abook/get_new_keys.sh\n" 'Update public keys from contacts in addressbook.'
+
+# MACRO 'A': Press <SHIFT>+a to add an address to the addressbook
+macro index,pager A '|abook --add-email-quiet<enter>' 'Add email to address book'
+
+# Set abook query command
+set query_command="abook --mutt-query '%s'"

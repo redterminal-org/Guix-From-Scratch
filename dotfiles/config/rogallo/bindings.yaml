@@ -1,0 +1,14 @@
+AddLocationToBookmarks: ctrl+b
+Backward: r
+Forward: t
+GoHome: W
+GoToParent: P
+GoToRoot: R
+JumpToCommandLine: C
+JumpToSidebar: S
+Quit: Q
+Reload: f5
+SearchBookmarks: B
+SearchHistory: H
+ToggleBookmarksManager: f3
+ToggleHistoryManager: f2

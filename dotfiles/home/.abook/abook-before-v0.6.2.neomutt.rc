@@ -1,0 +1,9 @@
+## Abook setup
+# Set abook query command
+set query_command="abook --mutt-query '%s'"
+bind editor <tab> complete-query
+
+# MACRO '\Ck': Press <CTRL>+k to update all keys of addressbook contacts
+macro index,pager \Ck "<shell-escape>abook --mutt-query '' | ~/.abook/get_new_keys.sh<enter>" 'Update public keys from contacts in addressbook.'
+# MACRO 'A': Press <SHIFT>+a to update all keys of addressbook contacts
+macro index,pager A "<pipe-message>abook --add-email-quiet<enter>" 'Add email to address book'

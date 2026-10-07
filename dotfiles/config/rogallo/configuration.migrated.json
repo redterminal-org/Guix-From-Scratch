@@ -1,0 +1,138 @@
+{
+    "migrated": true,
+    "theme": "tokyo-night",
+    "bindings": {
+        "AddLocationToBookmarks": "ctrl+b",
+        "SearchBookmarks": "B",
+        "ToggleBookmarksManager": "f3",
+        "SearchHistory": "H",
+        "ToggleHistoryManager": "f2",
+        "Forward": "K",
+        "Backward": "J",
+        "JumpToCommandLine": "C",
+        "JumpToSidebar": "S",
+        "Quit": "Q",
+        "GoToRoot": "R",
+        "GoHome": "W",
+        "GoToParent": "P",
+        "Reload": "f5"
+    },
+    "command_line_on_top": false,
+    "displayable_content_types": [
+        "text/gemini",
+        "text/plain"
+    ],
+    "handle_ansi_escape_sequences": true,
+    "strip_emoji": false,
+    "side_panel_visible": false,
+    "side_panel_on_right": false,
+    "side_panel_chosen_tab": "bookmarks",
+    "show_link_tooltips": true,
+    "show_preformat_tooltips": true,
+    "disable_animations": false,
+    "home_page": "gemini://redterminal.org",
+    "with_cache": false,
+    "cache_ttl": 3600,
+    "capsule_certificate_verify_mode": "hybrid",
+    "connection_timeout": 10,
+    "read_timeout": 30,
+    "maximum_redirects": 5,
+    "stripe_links": false,
+    "with_link_jumps": true,
+    "cosy_link_jumps": true,
+    "maximum_document_width": 120,
+    "jump_progress_timeout": 1.0,
+    "geminispace_link_icon": "\u2aa2",
+    "fingerspace_link_icon": "\u261b",
+    "gopherspace_link_icon": "\u25cb",
+    "spartanspace_link_icon": "\u2aa7",
+    "nexspace_link_icon": "\u263d",
+    "titanspace_link_icon": "\u2a53",
+    "otherspace_link_icon": "\u2197",
+    "list_item_bullet_icon": "\u2022",
+    "client_certificate_used_icon": "\u26bf",
+    "verified_ca_icon": "\u26c9",
+    "verified_tofu_icon": "\u2713",
+    "verified_off_icon": "\u2717",
+    "unverified_icon": "\u2022",
+    "external_editor": null,
+    "blend_pre_formatted_with_background": [
+        "#bb9a7f"
+    ],
+    "hide_preformatted": [],
+    "gopher_show_type_badges": true,
+    "gopher_type_badges": {
+        "0": "[TXT] ",
+        "1": "[DIR] ",
+        "2": "[UKN] ",
+        "3": "[ERR] ",
+        "4": "[BIN] ",
+        "5": "[BIN] ",
+        "6": "[BIN] ",
+        "7": "[INP] ",
+        "8": "[TEL] ",
+        "9": "[BIN] ",
+        "i": "[IMG] ",
+        "g": "[GIF] ",
+        "I": "[IMG] ",
+        "h": "[URL] ",
+        "d": "[DOC] ",
+        "s": "[SND] ",
+        "P": "[PDF] ",
+        "X": "[XML] ",
+        "unknown": "[XXX] "
+    },
+    "aliases": {
+        "fg": "gopher://gopher.floodgap.com/1/v2/vs?{q}",
+        "gp": "gemini://gemi.dev/cgi-bin/wp.cgi/search?{q}",
+        "gpde": "gemini://gemi.dev/cgi-bin/wp.cgi/search/de?{q}",
+        "ken": "gemini://kennedy.gemi.dev/search?{q}",
+        "tlgs": "gemini://tlgs.one/search?{q}"
+    },
+    "guess_language_for_syntax_highlighting_text_documents": true,
+    "convert_markdown_to_gemtext": true,
+    "toolbar_visible": true,
+    "toolbar_contents": [
+        [
+            "GoHome",
+            "\u2302"
+        ],
+        [
+            "Reload",
+            "\u21bb"
+        ],
+        [
+            "Backward",
+            "\u25c0\u25c0"
+        ],
+        [
+            "Forward",
+            "\u25b6\u25b6"
+        ],
+        [
+            "GoToParent",
+            "\u2191"
+        ],
+        [
+            "GoToRoot",
+            "\u21c8"
+        ],
+        [
+            "SearchHistory",
+            "\u25f7"
+        ],
+        [
+            "SearchBookmarks",
+            "\u2605"
+        ],
+        [
+            "ToggleView",
+            "\u21cb"
+        ]
+    ],
+    "toolbar_can_get_focus": false,
+    "toolbar_tooltips": true,
+    "footer_visible": true,
+    "command_line_prompt": ">",
+    "busy_indicator_cells": ""
+}

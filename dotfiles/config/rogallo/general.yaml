@@ -1,0 +1,17 @@
+busy_indicator_cells: ''
+cache_ttl: 3600
+capsule_certificate_verify_mode: hybrid
+command_line_on_top: false
+command_line_prompt: '>'
+connection_timeout: 10
+convert_markdown_to_gemtext: true
+disable_animations: false
+external_editor: nvim
+footer_visible: true
+guess_language_for_syntax_highlighting_text_documents: true
+jump_progress_timeout: 1.0
+maximum_document_width: 120
+maximum_redirects: 5
+read_timeout: 30
+show_link_tooltips: true
+with_cache: false

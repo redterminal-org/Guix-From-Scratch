@@ -1,0 +1,79 @@
+# Default config file
+## General configuration:
+# Path to subscribed tinylogs:
+subscribed_data = "~/.config/gtl/subs"
+# Date display format
+#date_format = "Mon 02 Jan 2006 15:04 MST"
+#date_format = "2006-01-02 15:04 MST"
+date_format = "2006-01-02 15:04 -0700"
+# Log file:
+log_file = "/dev/null"
+read_time_limit = 3
+# Optional: Highlight when text is found in content.
+# Separate values by a coma, eg:
+highlights = "@fab, @fab@redterminal.org"
+# Ignore Highlights from author:
+# Must be the full author displayed name!
+# ignore_author_highlights = "🤔 @bacardi55"
+# Maximum number of entries showed in cli mode. If --limit is used, it will overide this setting.
+# Will be ignored in tui mode.
+cli_limit = 10
+# Mode: either cli or tui
+mode = "tui"
+# If false, standard ascii characters will be used.
+tui_status_emoji = true
+
+## TUI options:
+# Enable tinylog edition from gtl:
+# This will use an external editor,
+# configured in your EDITOR environment variable.
+# You can check with 'echo $EDITOR' to see if it
+# is configured correctly.
+# ctrl+n is disabled when set to false.
+allow_edit = true
+# Path to tinylog file. This option is ignored if
+# allow_edit = false.
+# If not a valid file, editing will not be possible
+# and ctrl+n will be disabled.
+tinylog_path = "~/Work/redterminal.org/gemini/tinylog.gmi"
+# Path to script to be executed after the edition is done.
+# This script needs to be executable.
+# If not a valid executable script, it will be ignored.
+post_edit_script = "~/Work/redterminal.org/upload_gemini.sh"
+# Auto refresh feeds after editing the tinylog file.
+# Only used when allow_edit = true
+post_edit_refresh = true
+# Limit the number of entries displayed in TUI.
+# Indicate 0 for all entries.
+tui_max_entries = 100
+# Copy a pre formatted text to clipboard when creating a new entry
+# On linux, requires 'xclip' or 'xsel'
+tui_copy_stub_clipboard = true
+# If you are running gtl without X, the copy to clipboard feature
+# will not work (Or if you don't have xclip or xsel).
+# In this case, enabling this option will allow gtl to display
+# the sub text in a modal for easy copy in tools like tmux
+# At this stage, the rendering is ugly because of an issue in cview:
+# https://code.rocketnine.space/tslocum/cview/issues/72#issuecomment-3968
+tui_show_stub = true
+
+## TUI Theming:
+# Define colors for GTL TUI mode.
+# Default (dark) theme:
+#tui_color_background = "000000"
+#tui_color_box = "FFFFFF"
+#tui_color_focus_box = "008000"
+#tui_color_author_name = "FF0000"
+#tui_color_links = "87CEEB"
+#tui_color_elapsed_time = "87CEEB"
+tui_color_text = "a0a0a0"
+#tui_color_selected_background = "FFFFFF"
+#tui_color_selected_foreground = "000000"
+tui_color_highlight = "0000FF"
+tui_color_quote = "00A000"
+tui_color_preformatted = "FF8000"
+
+# Bookmarks (only available via TUI for now):
+bookmarks_enabled = true
+bookmarks_file_path = "~/.config/gtl/bookmarks.json"
+bookmarks_reverse_order = true

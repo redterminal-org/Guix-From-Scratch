@@ -1,0 +1,22 @@
+buttons:
+- command: GoHome
+  label: ⌂
+- command: Reload
+  label: ↻
+- command: Backward
+  label: ◀◀
+- command: Forward
+  label: ▶▶
+- command: GoToParent
+  label: ↑
+- command: GoToRoot
+  label: ⇈
+- command: SearchHistory
+  label: ◷
+- command: SearchBookmarks
+  label: ★
+- command: ToggleView
+  label: ⇋
+can_get_focus: false
+show_tooltips: true
+visible: false

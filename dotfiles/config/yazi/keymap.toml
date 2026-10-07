@@ -1,0 +1,21 @@
+# Arrow keys are explicitly mapped in addition to Yazi's Vim-style keys.
+
+[[mgr.prepend_keymap]]
+on = "<Up>"
+run = "arrow -1"
+desc = "Move cursor up"
+
+[[mgr.prepend_keymap]]
+on = "<Down>"
+run = "arrow 1"
+desc = "Move cursor down"
+
+[[mgr.prepend_keymap]]
+on = "<Left>"
+run = "leave"
+desc = "Go to parent directory"
+
+[[mgr.prepend_keymap]]
+on = "<Right>"
+run = "enter"
+desc = "Enter directory"

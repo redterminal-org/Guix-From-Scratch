@@ -1,0 +1,65 @@
+/* Tokyo Night Dark */
+
+* {
+  font-family: "JetBrainsMono Nerd Font Mono";
+  font-size: 17px;
+}
+
+.notification-row {
+  outline: none;
+}
+
+.notification {
+  background: #1a1b26;
+  border: 1px solid #3b4261;
+  border-radius: 8px;
+  margin: 4px 8px;
+  padding: 0;
+}
+
+.notification-content {
+  padding: 12px;
+}
+
+.summary {
+  color: #c0caf5;
+  font-weight: bold;
+}
+
+.body {
+  color: #a9b1d6;
+}
+
+.time {
+  color: #565f89;
+  font-size: 17px;
+}
+
+.close-button {
+  background: transparent;
+  color: #565f89;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.close-button:hover {
+  background: #24283b;
+  color: #7aa2f7;
+}
+
+/* Notification icons */
+
+.image {
+  margin-right: 10px;
+}
+
+/* Critical notifications */
+
+.notification.critical {
+  border-color: #f7768e;
+}
+
+.notification.critical .summary {
+  color: #f7768e;
+}
+

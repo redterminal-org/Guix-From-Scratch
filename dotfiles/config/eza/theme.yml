@@ -1,0 +1,5 @@
+punctuation:
+  foreground: yellow
+date:
+  foreground: cyan
+

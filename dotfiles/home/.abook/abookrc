@@ -1,0 +1,52 @@
+#### abook configuration file ####
+view CONTACT = name, email, notes
+##  Variables
+## ===========
+
+# Automatically save database on exit
+set autosave=true
+
+# Specify how fields not declared with the 'field' command nor
+# in a view should be preserved while loading an abook database.
+# It must be one of 'all', 'standard' (default), or 'none'.
+set preserve_fields=none
+
+# Show all email addresses in list
+set show_all_emails=true
+
+# Format of an entry's line in the main abook screen
+set index_format=" {name:25} {email:40} {notes}"
+
+# Command used to start mutt
+#set mutt_command="mutt || neomutt || exit 1"
+set mutt_command=mutt
+
+# Return all email addresses to a mutt query
+set mutt_return_all_emails=true
+
+# Command used to print
+set print_command=lpr
+
+# Command used to start the web browser
+set www_command=lynx
+
+# address style [eu|us|uk]
+set address_style=eu
+
+# use ASCII characters only
+set use_ascii_only=false
+
+set add_email_prevent_duplicates=true
+
+# field to be used with "sort by field" command
+set sort_field=name
+
+# show cursor in main display
+set show_cursor=false
+
+# colors
+set use_colors = true
+set color_header_fg = red
+set color_header_bg = default
+set color_list_header_fg = blue
+set color_list_header_bg = default

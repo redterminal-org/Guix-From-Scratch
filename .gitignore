@@ -1,0 +1,7 @@
+*~
+*.swp
+# Python Caches
+__pycache__/
+
+# other
+chatgpt-*
