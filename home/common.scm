@@ -13,6 +13,10 @@
     '("neovim" "git" "kitty" "starship" "yazi" "tmux")))
   (services
    (list
+    (service home-activation-service-type
+             #~(system* #$(file-append (specification->package "pipx")
+                                       "/bin/pipx")
+                        "upgrade" "--install" "rogallo"))
     (service home-bash-service-type
              (home-bash-configuration
               (bashrc (list (local-file "../dotfiles/bashrc")))))
