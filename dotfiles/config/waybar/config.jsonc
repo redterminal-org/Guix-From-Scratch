@@ -40,10 +40,7 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}",
-        "persistent-workspaces": {
-            "*": 9
-        }
+        "format": "{name}"
     },
     "hyprland/window": {
         "max-length": 40,

@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Remove unsupported persistent-workspaces option from ext/workspaces
+* Remove the unsupported persistent-workspaces configuration from the Waybar ext/workspaces module.
 ### Update README for current configuration
 * Document the implemented Ly service, current per-user Home packages, Rogallo activation, and the current private-data import workflow.
 ### Fix repository path typo in sync scripts
