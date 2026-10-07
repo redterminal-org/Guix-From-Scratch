@@ -1,6 +1,10 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Add and activate a Ly display manager service
+* Package Ly 1.4.1 with Guix's Zig build system and pinned Zig dependencies.
+* Add a Shepherd and PAM service for Ly on tty2 and remove conflicting desktop and mingetty login services.
+* Activate Ly directly as the system display manager.
 ### Add gemget to daniel's Home profile
 * Package gemget 1.9.0 from its upstream source and make it available only to daniel.
 ### Add todo.txt-cli to user Home profiles

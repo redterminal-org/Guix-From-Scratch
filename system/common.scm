@@ -8,6 +8,8 @@
   #:use-module (gnu services sound)
   #:use-module (home daniel)
   #:use-module (home root)
+  #:use-module (my-packages ly)
+  #:use-module (services ly)
   #:use-module (nongnu packages linux)
   #:export (base-operating-system keyboard-layout))
 
@@ -42,14 +44,15 @@
        (home-directory "/home/daniel")
        (supplementary-groups '("wheel" "netdev" "audio" "video" "input")))
       %base-user-accounts))
-    (packages (append system-packages %base-packages))
+    (packages (append (list ly) system-packages %base-packages))
     (services
-     (cons*
+     (cons
       (service guix-home-service-type
                `(("daniel" ,daniel-home-environment)
                  ("root" ,root-home-environment)))
-      (service network-manager-service-type)
-      (service elogind-service-type)
-      (service dbus-root-service-type)
-      (service pipewire-service-type)
-      %desktop-services))))
+      (cons
+       (service ly-service-type)
+       (modify-services %desktop-services
+         (delete mingetty-service-type)
+         (delete gdm-service-type)
+         (delete sddm-service-type)))))))
