@@ -1,4 +1,6 @@
 (define-module (home daniel)
-  #:use-module (home common))
+  #:use-module (home common)
+  #:export (daniel-home-environment))
 
-(make-home-environment)
+(define daniel-home-environment
+  (make-home-environment))

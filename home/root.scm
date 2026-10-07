@@ -1,5 +1,7 @@
 (define-module (home root)
-  #:use-module (home common))
+  #:use-module (home common)
+  #:export (root-home-environment))
 
-(make-home-environment
- #:private-data? #f)
+(define root-home-environment
+  (make-home-environment
+   #:private-data? #f))

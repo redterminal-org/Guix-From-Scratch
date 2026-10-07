@@ -3,8 +3,11 @@
   #:use-module (gnu packages)
   #:use-module (gnu services)
   #:use-module (gnu services dbus)
+  #:use-module (gnu services guix)
   #:use-module (gnu services networking)
   #:use-module (gnu services sound)
+  #:use-module (home daniel)
+  #:use-module (home root)
   #:use-module (nongnu packages linux)
   #:export (base-operating-system keyboard-layout))
 
@@ -42,6 +45,9 @@
     (packages (append system-packages %base-packages))
     (services
      (cons*
+      (service guix-home-service-type
+               `(("daniel" ,daniel-home-environment)
+                 ("root" ,root-home-environment)))
       (service network-manager-service-type)
       (service elogind-service-type)
       (service dbus-root-service-type)
