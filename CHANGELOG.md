@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Fix repository path typo in sync scripts
+* Correct the redterminal.org path in the pull and push repository scripts.
 ### Remove obsolete abook command references
 * Remove the obsolete mutt, lpr, and lynx command references from the abook configuration.
 ### Prevent failed GPG imports from marking private data as successful

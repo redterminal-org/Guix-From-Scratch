@@ -9,7 +9,7 @@ repositories=(
   "$HOME/Dokumente"
   "$HOME/Work/Ansible/Debian_Init"
   "$HOME/Work/Ansible/Upgrades"
-  "$HOME/Work/redteminal.org"
+  "$HOME/Work/redterminal.org"
   "$HOME/Work/VimWiki"
 )
 
