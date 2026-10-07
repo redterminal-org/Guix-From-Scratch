@@ -13,15 +13,16 @@
 
 (define system-packages
   (specifications->packages
-   '("curl" "wget" "git" "bat" "eza" "htop" "acpi" "ripgrep"
-     "lsof" "tree" "inetutils" "brightnessctl" "jq" "pv" "sshfs"
+   '("curl" "wget" "git" "bat" "eza" "fd" "fzf" "htop" "acpi" "ripgrep"
+     "lsof" "tree" "tree-sitter-cli" "inetutils" "brightnessctl" "jq" "pv" "sshfs"
      "gdu" "wev" "gnupg" "starship" "zfs"
      "wofi" "waybar" "hyprland" "hyprpaper" "xwayland" "dolphin"
      "grim" "slurp" "wl-clipboard" "wtype"
      "libnotify" "swaynotificationcenter"
      "kitty" "yazi" "qutebrowser" "librewolf" "freetube" "neomutt"
-     "urlscan" "elinks" "mpv" "zathura" "pipx" "ansible" "python"
-     "abook" "zbar" "tmux" "rofimoji" "openssh" "netcat" "coreutils")))
+     "urlscan" "elinks" "mpv" "zathura" "pipx" "ansible" "python" "pyright"
+     "abook" "zbar" "tmux" "rofimoji" "openssh" "netcat" "coreutils"
+     "gcc" "gitui" "nodejs" "par")))
 
 (define base-operating-system
   (operating-system
