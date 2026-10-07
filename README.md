@@ -10,15 +10,15 @@ This is my Guix setup for my *personal* use and learning, but it may be of use f
 
 Starter Guix System + Guix Home configuration for one Lenovo T460s (grumpy) so far.
 
-Goals: UEFI/GRUB EFI; labels EFI/GUIX/SWAP; Nonguix Intel i915/iWlwifi/SOF firmware; Wayland/Hyprland; XWayland; PipeWire; SwayNC; mutable dotfile overlay; separate LazyVim repository; first-login SSH secrets import.
+Goals: UEFI/GRUB EFI; labels EFI/GUIX/SWAP; Nonguix Intel i915/iWlwifi/SOF firmware; Wayland/Hyprland; XWayland; PipeWire; SwayNC; mutable dotfile overlay; separate LazyVim repository; private-data import through a user Shepherd service.
 
 ## Important
 
 This is a starter repository. Guix channel revisions can change package/service APIs.
 
-Ly is deliberately an integration point rather than a fake `ly-service-type`: no native Guix/Nonguix Ly service was verified while assembling this archive. Ly itself documents non-systemd support. Add a package/service for your chosen Ly revision before enabling it.
+Ly is packaged locally as version 1.4.1 with its pinned Zig dependencies. It is activated through a Shepherd and PAM service on `tty2` and used as the system display manager.
 
-The two personal package files are placeholders for pinned `gemget` and `todo.txt-cli` definitions. Generate/verify current definitions with Guix before enabling them.
+The personal package definitions include `gemget`, `mcfly`, and `todo-txt-cli`. Their package selections are applied per user through the Home environments.
 
 ## Apply
 
@@ -29,11 +29,11 @@ Use a persistent checkout and inspect it first:
 
 A system reconfigure also builds and activates the registered Home environments for `daniel` and `root`. Separate `guix home reconfigure` commands are not required for these two users.
 
-System packages are shared by all users. Each user has a separate Home environment for additional packages and Home services. The current per-user package lists are empty.
+System packages are shared by all users. Each user has a separate Home environment for additional packages and Home services. `daniel` currently gets `gemget`, `mcfly`, and `todo-txt-cli`; `root` gets `mcfly` and `todo-txt-cli`.
 
 ## Home environments
 
-`home/common.scm` defines the shared Home environment. `home/daniel.scm` uses it with an empty user-specific package list and enables private-data import. `home/root.scm` uses the same environment with private-data import disabled. Future non-root users can follow the `daniel` configuration pattern.
+`home/common.scm` defines the shared Home environment and installs/updates Rogallo with pipx on every Home activation. `home/daniel.scm` uses it with `gemget`, `mcfly`, and `todo-txt-cli` and enables private-data import. `home/root.scm` uses the same environment with `mcfly` and `todo-txt-cli` and private-data import disabled. Future non-root users can follow the `daniel` configuration pattern.
 
 ## Dotfiles
 
@@ -49,4 +49,4 @@ The session exports `QT_QPA_PLATFORMTHEME=qt5ct`. This is the qt5ct/qt6ct-compat
 
 ## Secrets
 
-No secrets belong in this repository. The Home service imports GPG, SSH, password-store and Rogallo data to mutable user directories and writes a one-time marker at `~/.local/state/.guix-private-data-import-marker`. This service is enabled for `daniel` and future non-root users, but deliberately disabled for `root`.
+No secrets belong in this repository. The Home service imports GPG, SSH, password-store and Rogallo data to mutable user directories and writes a one-time marker at `~/.local/state/.guix-private-data-import-marker`. It runs as a user Shepherd service and is started from Hyprland with the graphical session environment so graphical prompts can work correctly. A failed GPG import prevents the remaining private-data copy and marker creation. This service is enabled for `daniel` and future non-root users, but deliberately disabled for `root`.

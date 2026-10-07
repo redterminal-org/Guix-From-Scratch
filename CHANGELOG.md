@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Update README for current configuration
+* Document the implemented Ly service, current per-user Home packages, Rogallo activation, and the current private-data import workflow.
 ### Fix repository path typo in sync scripts
 * Correct the redterminal.org path in the pull and push repository scripts.
 ### Remove obsolete abook command references
