@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Remove obsolete TeX environment helper
+* Remove the unused create_tex_env.sh script, which still depended on nix-shell.
 ### Clean up invalid .mailcap configuration
 * Remove the accidentally embedded Bash configuration from .mailcap.
 * Remove obsolete hardcoded Nix store references and keep only the actual mailcap entries.
