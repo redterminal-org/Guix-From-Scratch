@@ -1,6 +1,9 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Clean up invalid .mailcap configuration
+* Remove the accidentally embedded Bash configuration from .mailcap.
+* Remove obsolete hardcoded Nix store references and keep only the actual mailcap entries.
 ### Fix missing password-store runtime dependency and remove unused snip binding
 * Add password-store to the system package profile for the existing Wofi password and OTP menus.
 * Remove the unused SUPER+S keybinding and its snip command from the Hyprland configuration.
