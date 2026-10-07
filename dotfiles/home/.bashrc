@@ -10,7 +10,7 @@ esac
 # Commands that should be applied only for interactive shells.
 [[ $- == *i* ]] || return
 
-HISTFILE="/home/daniel/.bash_history"
+HISTFILE="$HOME/.bash_history"
 HISTFILESIZE=100000
 HISTSIZE=5000
 mkdir -p "$(dirname "$HISTFILE")"
@@ -126,7 +126,6 @@ alias v="nvim"
 alias sc="shellcheck -s sh -o all"
 
 # shortcuts
-alias rr="ranger"
 
 # get IPv4 and IPv6
 alias ipaddr='echo -n "IPv4: "; curl -s -4 https://my.ip.fi; echo -n "IPv6: "; curl -s -6 https://my.ip.fi'

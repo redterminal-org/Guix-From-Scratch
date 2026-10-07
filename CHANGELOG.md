@@ -1,6 +1,9 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Clean up Bash history and remove obsolete ranger alias
+* Use $HOME for HISTFILE instead of a hardcoded user path.
+* Remove the unused rr alias for ranger.
 ### Remove obsolete TeX environment helper
 * Remove the unused create_tex_env.sh script, which still depended on nix-shell.
 ### Clean up invalid .mailcap configuration
