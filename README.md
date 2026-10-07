@@ -32,11 +32,9 @@ Change `CHANGE-ME` in `system/common.scm` to your actual account name before app
 
 ## Dotfiles
 
-`dotfiles/config/` is copied recursively to `~/.config/` during Home activation. Files supplied by the repository overwrite their counterparts. Files that exist only in `$HOME` are preserved. Removed repository files are not automatically deleted.
+During every Home activation, `dotfiles/home/` is copied recursively to `~/` and `dotfiles/config/` is copied recursively to `~/.config/`. Files supplied by the repository overwrite their counterparts. Files that exist only in the user's home directory are preserved, and removed repository files are not automatically deleted.
 
 `~/.config/nvim/` is intentionally absent: manage it with your separate local-network LazyVim Git repository.
-
-Individual files are copied separately: `dotfiles/bashrc -> ~/.bashrc`, `dotfiles/gitconfig -> ~/.gitconfig`.
 
 ## Secrets
 
