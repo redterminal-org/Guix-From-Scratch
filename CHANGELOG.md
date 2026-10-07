@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Fix ZFS receive to run on the local host
+* Stream remote zfs send output through local pv into local zfs receive instead of running the receive pipeline remotely.
 ### Configure todo.txt for the user Home environment
 * Add a versioned todo.txt configuration under ~/.config/todo that stores todo.txt, done.txt, and report.txt in ~/todo.
 ### Enable McFly shell integration

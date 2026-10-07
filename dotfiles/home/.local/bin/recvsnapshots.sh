@@ -153,9 +153,9 @@ if $DRY_RUN; then
   echo "ssh ${SERVER} zfs send -R -I '${SEND_POOL}@${FROM_SNAPSHOT}' '${SEND_POOL}@${TO_SNAPSHOT}' | ${pv_cmd:-cat} | sudo zfs receive -F -d '${RECV_POOL}'"
 else
   ssh "$SERVER" \
-    "zfs send -R -I '${SEND_POOL}@${FROM_SNAPSHOT}' '${SEND_POOL}@${TO_SNAPSHOT}' |
+    "zfs send -R -I '${SEND_POOL}@${FROM_SNAPSHOT}' '${SEND_POOL}@${TO_SNAPSHOT}'" |
     ${pv_cmd:-cat} |
-    sudo zfs receive -F -d '${RECV_POOL}'"
+    sudo zfs receive -F -d "${RECV_POOL}"
 fi
 
 echo
