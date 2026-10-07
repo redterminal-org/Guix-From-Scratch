@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Configure todo.txt for the user Home environment
+* Add a versioned todo.txt configuration under ~/.config/todo that stores todo.txt, done.txt, and report.txt in ~/todo.
 ### Enable McFly shell integration
 * Initialize McFly correctly in Bash by evaluating the shell code produced by mcfly init bash.
 ### Run private-data import through user Shepherd
