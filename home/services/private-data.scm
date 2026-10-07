@@ -85,9 +85,11 @@
                                                (not (file-is-directory? (string-append tmpdir "/rogallo"))))
                                            (note "Private data error" "Downloaded private-data layout is incomplete.")
                                            (begin
-                                             (system* gpg "--batch" "--import" (string-append tmpdir "/gnupg/secret.asc"))
-                                             (system* gpg "--batch" "--import" (string-append tmpdir "/gnupg/public.asc"))
-                                             (mkdir-p (string-append home "/.ssh"))
+                                             (if (or (not (zero? (system* gpg "--batch" "--import" (string-append tmpdir "/gnupg/secret.asc"))))
+                                                     (not (zero? (system* gpg "--batch" "--import" (string-append tmpdir "/gnupg/public.asc")))))
+                                                 (note "Private data error" "Could not import GPG keys. No marker was set.")
+                                                 (begin
+                                                   (mkdir-p (string-append home "/.ssh"))
                                              (copy-recursively (string-append tmpdir "/ssh") (string-append home "/.ssh"))
                                              (mkdir-p (string-append home "/.password-store"))
                                              (copy-recursively (string-append tmpdir "/password-store") (string-append home "/.password-store"))
@@ -95,7 +97,7 @@
                                              (copy-recursively (string-append tmpdir "/rogallo") (string-append home "/.local/share/rogallo"))
                                              (call-with-output-file marker (lambda (p) (display "" p)))
                                              (chmod marker #o600)
-                                             (note "Private data" "Secrets imported successfully."))))))))))))
+                                             (note "Private data" "Secrets imported successfully."))))))))))))))))
                             (lambda ()
                               (false-if-exception (delete-file-recursively tmpdir))))))))))))))))))
 

@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Prevent failed GPG imports from marking private data as successful
+* Check GPG import exit codes before copying private data and creating the success marker.
 ### Clean up Bash history and remove obsolete ranger alias
 * Use $HOME for HISTFILE instead of a hardcoded user path.
 * Remove the unused rr alias for ranger.
