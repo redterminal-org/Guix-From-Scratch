@@ -23,7 +23,6 @@ local terminal = "kitty --class OnTop"
 local fileManager = "dolphin"
 local menu = "wofi --show drun"
 local reloadWaybar = "pkill waybar; waybar"
-local snip = "snip"
 local dropdownTerminal = "kitty --class dropdown-terminal"
 local vimwikiTerminal = "kitty --class vimwiki-terminal --title Notes -d ~/Work/VimWiki/ nvim ~/Work/VimWiki/index.wiki"
 
@@ -300,7 +299,6 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(reloadWaybar))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(snip))
 
 -- Window management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())

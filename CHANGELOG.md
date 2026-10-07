@@ -1,6 +1,9 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Fix missing password-store runtime dependency and remove unused snip binding
+* Add password-store to the system package profile for the existing Wofi password and OTP menus.
+* Remove the unused SUPER+S keybinding and its snip command from the Hyprland configuration.
 ### Fix ZFS receive to run on the local host
 * Stream remote zfs send output through local pv into local zfs receive instead of running the receive pipeline remotely.
 ### Configure todo.txt for the user Home environment
