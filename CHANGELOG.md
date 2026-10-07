@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Remove temporary private-data downloads after import
+* Always remove the temporary ~/.cache/guix-private-data tree after private-data processing, including failed downloads and import errors.
 ### Add and activate a Ly display manager service
 * Package Ly 1.4.1 with Guix's Zig build system and pinned Zig dependencies.
 * Add a Shepherd and PAM service for Ly on tty2 and remove conflicting desktop and mingetty login services.

@@ -61,9 +61,11 @@
                             (path (prompt "Secrets path on server")))
                        (if (string-null? path)
                            (note "Private data error" "No secrets path was provided.")
-                           (begin
-                             (false-if-exception (delete-file-recursively tmpdir))
-                             (mkdir-p tmpdir)
+                           (dynamic-wind
+                            (lambda ()
+                              (false-if-exception (delete-file-recursively tmpdir)))
+                            (lambda ()
+                              (mkdir-p tmpdir)
                              (if (not (zero? (system* nc "-z" "-w" "3" host "22")))
                                  (note "Private data error" "Server is not reachable; try again next login.")
                                  (begin
@@ -91,7 +93,9 @@
                                              (copy-recursively (string-append tmpdir "/rogallo") (string-append home "/.local/share/rogallo"))
                                              (call-with-output-file marker (lambda (p) (display "" p)))
                                              (chmod marker #o600)
-                                             (note "Private data" "Secrets imported successfully."))))))))))))))))))
+                                             (note "Private data" "Secrets imported successfully."))))))))))))
+                            (lambda ()
+                              (false-if-exception (delete-file-recursively tmpdir))))))))))))))))))
 
 (define home-private-data-service-type
   (service-type
