@@ -7,15 +7,21 @@
 (define-record-type* <home-dotfiles-configuration>
   home-dotfiles-configuration make-home-dotfiles-configuration
   home-dotfiles-configuration?
-  (source-directory home-dotfiles-configuration-source-directory))
+  (home-directory home-dotfiles-configuration-home-directory)
+  (config-directory home-dotfiles-configuration-config-directory))
 
 (define (dotfiles-activation config)
-  (let ((source (home-dotfiles-configuration-source-directory config)))
+  (let ((home-source
+         (home-dotfiles-configuration-home-directory config))
+        (config-source
+         (home-dotfiles-configuration-config-directory config)))
     #~(begin
         (use-modules (guix build utils))
-        (let ((target (string-append (getenv "HOME") "/.config")))
-          (mkdir-p target)
-          (copy-recursively #$source target)))))
+        (let ((home (getenv "HOME"))
+              (config (string-append (getenv "HOME") "/.config")))
+          (copy-recursively #$home-source home)
+          (mkdir-p config)
+          (copy-recursively #$config-source config)))))
 
 (define home-dotfiles-service-type
   (service-type
@@ -23,4 +29,5 @@
    (extensions
     (list (service-extension home-activation-service-type dotfiles-activation)))
    (default-value #f)
-   (description "Copy a configuration tree into ~/.config as a mutable overlay; preserve files not present in the source.")))
+   (description
+    "Copy the home and configuration dotfile trees into the user's home directory as mutable overlays; preserve files not present in the sources.")))
