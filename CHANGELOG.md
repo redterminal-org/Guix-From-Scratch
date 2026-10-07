@@ -1,6 +1,9 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Run private-data import through user Shepherd
+* Move the private-data import from Home activation to a manually triggered one-shot user Shepherd service so graphical prompts run inside the Wayland session.
+* Start the private-data import from Hyprland with the graphical session environment instead of the nonexistent systemd user service.
 ### Make the Ly build fully reproducible
 * Add the missing zigini 0.5.0 dependency at the upstream commit required by Ly 1.4.1.
 * Pin all Ly Zig dependencies in the Guix package.

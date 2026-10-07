@@ -1,10 +1,12 @@
 (define-module (home services private-data)
   #:use-module (gnu home services)
+  #:use-module (gnu home services shepherd)
   #:use-module (gnu packages)
   #:use-module (gnu packages gnupg)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages networking)
   #:use-module (gnu packages freedesktop)
+  #:use-module (gnu services shepherd)
   #:use-module (guix gexp)
   #:export (home-private-data-service-type))
 
@@ -97,10 +99,22 @@
                             (lambda ()
                               (false-if-exception (delete-file-recursively tmpdir))))))))))))))))))
 
+(define (private-data-shepherd-service _config)
+  (list
+   (shepherd-service
+    (provision '(import-private-data))
+    (documentation "Import private user data over SSH.")
+    (auto-start? #f)
+    (one-shot? #t)
+    (start #~(make-forkexec-constructor
+              (list #$private-data-script)))
+    (stop #~(make-kill-destructor)))))
+
 (define home-private-data-service-type
   (service-type
    (name 'home-private-data)
    (extensions
-    (list (service-extension home-activation-service-type (const private-data-script))))
+    (list (service-extension home-shepherd-service-type
+                             private-data-shepherd-service)))
    (default-value #f)
-   (description "Import private user data once over SSH during Home activation.")))
+   (description "Import private user data once through a user Shepherd service.")))

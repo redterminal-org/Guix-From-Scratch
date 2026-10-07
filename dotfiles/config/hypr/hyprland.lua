@@ -37,11 +37,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("hyprpaper")
 
   hl.exec_cmd(
-    "systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_RUNTIME_DIR XDG_CURRENT_DESKTOP XDG_SESSION_TYPE"
-  )
-
-  hl.exec_cmd(
-    "systemctl --user start --no-block import-private-data.service"
+    "herd start -E WAYLAND_DISPLAY=\"$WAYLAND_DISPLAY\" -E DISPLAY=\"$DISPLAY\" -E XDG_RUNTIME_DIR=\"$XDG_RUNTIME_DIR\" -E XDG_CURRENT_DESKTOP=\"$XDG_CURRENT_DESKTOP\" -E XDG_SESSION_TYPE=\"$XDG_SESSION_TYPE\" import-private-data"
   )
 end)
 
