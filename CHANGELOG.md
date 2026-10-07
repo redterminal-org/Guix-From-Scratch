@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Enable McFly shell integration
+* Initialize McFly correctly in Bash by evaluating the shell code produced by mcfly init bash.
 ### Run private-data import through user Shepherd
 * Move the private-data import from Home activation to a manually triggered one-shot user Shepherd service so graphical prompts run inside the Wayland session.
 * Start the private-data import from Hyprland with the graphical session environment instead of the nonexistent systemd user service.

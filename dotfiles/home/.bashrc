@@ -159,4 +159,4 @@ which todo.sh >/dev/null 2>&1 && todo ls
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-which mcfly >/dev/null 2>&1 && "$(mcfly init bash)"
+which mcfly >/dev/null 2>&1 && eval "$(mcfly init bash)"
