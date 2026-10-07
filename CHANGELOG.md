@@ -1,6 +1,8 @@
 **CHANGELOG**
 
 ## 0.1.0
+### Deploy Home environments through system reconfigure
+* Register daniel's and root's existing Home environments with guix-home-service-type so a system reconfigure builds and activates both Home environments.
 ### Unify GTK and Qt theming with Tokyo Night
 * Add GTK 3/4 themes and Qt 5/6 color schemes based on the existing Waybar Tokyo Night palette.
 * Install qt5ct, qt6ct, and Kvantum system-wide and enable qt5ct as the shared Qt platform theme for the desktop session.

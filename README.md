@@ -26,8 +26,8 @@ Use a persistent checkout and inspect it first:
 
     guix pull -C channels.scm
     sudo guix system reconfigure -L . system/hosts/grumpy.scm
-    guix home reconfigure -L . home/daniel.scm
-    sudo -H guix home reconfigure -L . home/root.scm
+
+A system reconfigure also builds and activates the registered Home environments for `daniel` and `root`. Separate `guix home reconfigure` commands are not required for these two users.
 
 System packages are shared by all users. Each user has a separate Home environment for additional packages and Home services. The current per-user package lists are empty.
 
