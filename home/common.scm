@@ -1,7 +1,6 @@
 (define-module (home common)
   #:use-module (gnu home)
   #:use-module (gnu home services)
-  #:use-module (gnu home services shells)
   #:use-module (gnu packages)
   #:use-module (guix gexp)
   #:use-module (home services dotfiles)
@@ -17,11 +16,10 @@
              #~(system* #$(file-append (specification->package "pipx")
                                        "/bin/pipx")
                         "upgrade" "--install" "rogallo"))
-    (service home-bash-service-type
-             (home-bash-configuration
-              (bashrc (list (local-file "../dotfiles/bashrc")))))
     (service home-dotfiles-service-type
              (home-dotfiles-configuration
-              (source-directory
+              (home-directory
+               (local-file "../dotfiles/home" #:recursive? #t))
+              (config-directory
                (local-file "../dotfiles/config" #:recursive? #t))))
     (service home-private-data-service-type))))
