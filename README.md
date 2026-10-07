@@ -26,9 +26,14 @@ Use a persistent checkout and inspect it first:
 
     guix pull -C channels.scm
     sudo guix system reconfigure -L . system/hosts/grumpy.scm
-    guix home reconfigure -L . home/common.scm
+    guix home reconfigure -L . home/daniel.scm
+    sudo -H guix home reconfigure -L . home/root.scm
 
-Change `CHANGE-ME` in `system/common.scm` to your actual account name before applying.
+System packages are shared by all users. Each user has a separate Home environment for additional packages and Home services. The current per-user package lists are empty.
+
+## Home environments
+
+`home/common.scm` defines the shared Home environment. `home/daniel.scm` uses it with an empty user-specific package list and enables private-data import. `home/root.scm` uses the same environment with private-data import disabled. Future non-root users can follow the `daniel` configuration pattern.
 
 ## Dotfiles
 
@@ -38,4 +43,4 @@ During every Home activation, `dotfiles/home/` is copied recursively to `~/` and
 
 ## Secrets
 
-No secrets belong in this repository. The Home service imports GPG, SSH, password-store and Rogallo data to mutable user directories and writes a one-time marker at `~/.local/state/.guix-private-data-import-marker`.
+No secrets belong in this repository. The Home service imports GPG, SSH, password-store and Rogallo data to mutable user directories and writes a one-time marker at `~/.local/state/.guix-private-data-import-marker`. This service is enabled for `daniel` and future non-root users, but deliberately disabled for `root`.
